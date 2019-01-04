@@ -27,7 +27,7 @@ public class ConsumerPoc {
 	       consumerConfig.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
 	       KafkaConsumer<byte[], byte[]> consumer = new KafkaConsumer<>(consumerConfig);
 	       TestConsumerRebalanceListener rebalanceListener = new TestConsumerRebalanceListener();
-	       consumer.subscribe(Collections.singletonList("test"), rebalanceListener);
+	       consumer.subscribe(Collections.singletonList("belgacom"), rebalanceListener);
 
 	       while (true) {
 	           ConsumerRecords<byte[], byte[]> records = consumer.poll(1000);
